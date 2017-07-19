@@ -50,7 +50,7 @@ class TestWorkerBasic(unittest.TestCase):
 
         self.assertEqual(len_to_crawl_after, len_to_crawl_before)
 
-    def test_worker_add_links_in_crawled(self):
+   ''' def test_worker_add_links_in_crawled(self):
         worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
         worker.crawled = []
 
@@ -59,7 +59,7 @@ class TestWorkerBasic(unittest.TestCase):
         len_to_crawl_after = len(worker.to_crawl)
 
         self.assertEqual(len_to_crawl_after, len_to_crawl_before)
-
+'''
 
 
 
