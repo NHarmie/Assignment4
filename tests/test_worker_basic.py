@@ -33,6 +33,7 @@ class TestWorkerBasic(unittest.TestCase):
 
         with codecs.open(file_path, encoding='utf-8') as f:
             text = f.read()
+            
 
         results, next_page = worker.parse_text(str(text).strip().replace('\r\n', ''))
 
@@ -78,7 +79,7 @@ class TestWorkerBasic(unittest.TestCase):
         worker.crawled = []
         
         len_crawled_before = len(worker.results)
-        worker.run()
+        worker.add_links(["https://www.reddit.com/user/Chrikelnel"])
         len_crawled_after = len(worker.results)
         self.assertGreater(len_crawled_before, len_crawled_after)
 
