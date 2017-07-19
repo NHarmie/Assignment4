@@ -85,7 +85,7 @@ class TestWorkerBasic(unittest.TestCase):
 
 
 
-   def test_worker_add_links_in_crawled(self):
+    def test_worker_add_links_in_crawled(self):
         worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
         worker.crawled = []
 
