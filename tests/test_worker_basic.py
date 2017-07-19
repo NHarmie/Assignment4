@@ -66,9 +66,9 @@ class TestWorkerBasic(unittest.TestCase):
         worker.crawled = []
         
         len_to_crawl_before = len(worker.to_crawl)
-        worker.add_links(["https://www.reddit.com/user/Chrikelnel"])
+        worker.run()
         len_to_crawl_after = len(worker.to_crawl)
-        self.assertGreater(len_to_crawl_after, len_to_crawl_before)
+        self.assertGreater(len_to_crawl_before, len_to_crawl_after)
 
     
     def test_crawled_size(self):
@@ -81,7 +81,7 @@ class TestWorkerBasic(unittest.TestCase):
         len_crawled_before = len(worker.results)
         worker.add_links(["https://www.reddit.com/user/Chrikelnel"])
         len_crawled_after = len(worker.results)
-        self.assertGreater(len_crawled_before, len_crawled_after)
+        self.assertGreater(len_crawled_after, len_crawled_before)
 
 
 
@@ -93,7 +93,7 @@ class TestWorkerBasic(unittest.TestCase):
         worker.add_links(["https://www.reddit.com/user/Chrikelnel"])
         len_to_crawl_after = len(worker.to_crawl)
 
-        self.assertEqual(len_to_crawl_after, len_to_crawl_before)
+        self.assertGreater(len_to_crawl_after, len_to_crawl_before)
 
 
 
