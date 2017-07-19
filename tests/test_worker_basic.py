@@ -78,9 +78,9 @@ class TestWorkerBasic(unittest.TestCase):
         worker.crawled = []
         
         len_crawled_before = len(worker.results)
-        worker.add_links(["https://www.reddit.com/user/Chrikelnel"])
+        worker.run()
         len_crawled_after = len(worker.results)
-        self.assertGreater(len_crawled_after, len_crawled_before)
+        self.assertGreater(len_crawled_before, len_crawled_after)
 
 
 
