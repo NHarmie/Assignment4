@@ -49,6 +49,19 @@ class TestWorkerBasic(unittest.TestCase):
         len_to_crawl_after = len(worker.to_crawl)
 
         self.assertEqual(len_to_crawl_after, len_to_crawl_before)
+        
+    def test_URL(self):
+        '''Purpose: Tests if the URL can be reached
+        Expectation: Link fails to be reachable, throw execption 
+        :return: '''
+        worker = BasicUserParseWorker("https://www.reddit.com/user/notARealUser")
+        self.assertRaises(IOError, worker.run)
+        
+    def test two
+    
+    def test three
+
+
 
    #def test_worker_add_links_in_crawled(self):
   #      worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
