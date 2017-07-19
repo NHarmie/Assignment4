@@ -57,7 +57,7 @@ class TestWorkerBasic(unittest.TestCase):
         worker = BasicUserParseWorker("https://www.reddit.com/user/notARealUser")
         self.assertRaises(IOError, worker.run)
         
-    def test_to_crawl_size
+    def test_to_crawl_size(self):
         '''Purpose: To test if the amount of links to crawl properly changes size
         Expectation: Links to crawl descreased by one '''
         
@@ -70,7 +70,7 @@ class TestWorkerBasic(unittest.TestCase):
         self.assertGreater(len_to_crawl_before, len_to_crawl_after)
 
     
-    def test_crawled_size
+    def test_crawled_size(self):
         '''Purpose: To test if the amount of links in crawled properly changes size
         Expectation: Links in crawled increased by one '''
         
