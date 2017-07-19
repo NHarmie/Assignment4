@@ -77,9 +77,9 @@ class TestWorkerBasic(unittest.TestCase):
         worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
         worker.crawled = []
         
-        len_crawled_before = len(worker.crawled)
+        len_crawled_before = len(worker.results)
         worker.add_links(["https://www.reddit.com/user/Chrikelnel"])
-        len_crawled_after = len(worker.crawled)
+        len_crawled_after = len(worker.results)
         self.assertGreater(len_crawled_after, len_crawled_before)
 
 
