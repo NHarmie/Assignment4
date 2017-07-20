@@ -66,7 +66,7 @@ class TestWorkerBasic(unittest.TestCase):
         worker.crawled = []
         
         len_to_crawl_before = len(worker.to_crawl)
-        worker.run()
+        self.assertRaises(ConnectionRefusedError, worker.run)
         len_to_crawl_after = len(worker.to_crawl)
         self.assertGreater(len_to_crawl_before, len_to_crawl_after)
 
@@ -79,7 +79,7 @@ class TestWorkerBasic(unittest.TestCase):
         worker.crawled = []
         
         len_crawled_before = len(worker.results)
-        worker.add_links(["https://www.reddit.com/user/Chrikelnel"])
+        self.assertRaises(ConnectionRefusedError, worker.run)
         len_crawled_after = len(worker.results)
         self.assertGreater(len_crawled_after, len_crawled_before)
 
